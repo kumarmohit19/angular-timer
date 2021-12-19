@@ -7,9 +7,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TimerComponent implements OnInit {
   @Input() initial: number;
+  initialValue: number;
+  timerInterval: any;
 
   ngOnInit() {
+    this.initialValue= this.initial;
+    //console.log(this.initialValue)
+    this.timerInterval  = setInterval(()=>{
+      if(this.initialValue > 0) {
+        this.initialValue--;
+        console.log("hi");
+      }
+    }, 1000);
+  }
 
+  constructor() {
+  }
+
+  handleStopTimer(){
+    clearInterval(this.timerInterval);
   }
 
 }
