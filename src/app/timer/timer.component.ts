@@ -16,7 +16,6 @@ export class TimerComponent implements OnInit {
     this.timerInterval  = setInterval(()=>{
       if(this.initialValue > 0) {
         this.initialValue--;
-        console.log("hi");
       }
     }, 1000);
   }
